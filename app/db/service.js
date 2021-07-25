@@ -1,5 +1,5 @@
 // import { create } from "domain";
-import fs, { realpath } from "fs";
+import fs, { read, realpath } from "fs";
 
 let realPath = "";
 
@@ -18,16 +18,27 @@ export default {
 
   async create(noteText){
     const newNotes = await this.index();
+    // TODO:
+    // take the "newNotes", read each id,
+    // create a new id (sort it and grab the last one) and
+    noteText.id = newNotes.length + 1
+
+    // assign it to the "noteText" to create (id + noteText) = element, then
+    // add it to the new notes => [...newNotes,element]
+
     fs.promises.writeFile(`${realPath}app/db/db.json`,
     JSON.stringify([...newNotes,noteText])
-    );
+    ).then(()=>{message: "Notes Added"});
   },
   async del(noteText){
     const notesArray = await this.index();
-    const noteIndex = notesArray.indexOf(noteText);
-    if (noteIndex > -1){
-      notesArray.splice(noteIndex,-1);
-    }
+
+    // REF: https://stackoverflow.com/questions/34336633/remove-object-from-array-knowing-its-id
+    let index = notesArray.map(idElem => {
+      return idElem.id;
+    }).indexOf(noteText)
+
+    notesArray.splice(index,1);
 
     fs.promises.writeFile(`${realPath}app/db/db.json`,
     JSON.stringify([...notesArray])

@@ -7,9 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -I --watch app",
-    "server": "json-server --watch ./app/db/db.json"
+    "server": "json-server --watch app/db/db.json"
   },
-  "author": "",
+  "author": "Dan Looten",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",

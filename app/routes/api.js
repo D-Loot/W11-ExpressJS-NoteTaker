@@ -6,7 +6,8 @@ const router = new Router();
 // Whenever "/notes" is sent, ask the server to return all of the characters by using the imported index function from "express"
 router.get("/notes", async(req,res)=>{
   // send back the "200" status code with all of the characters as JSON
-  res.status(200).json(db.index());
+  const indexDb = await db.index();
+  res.status(200).json(indexDb);
 });
 
 // "router.post" comes from the imported express file
@@ -22,7 +23,7 @@ router.post("/notes",({body},res)=>{
 
 // https://www.tabnine.com/code/javascript/functions/express/Router/delete
 router.delete("/notes/:id",(req,res)=>{
-
+// console.log(req)
   db.del(req.params.id).then(() => {
     res.status(201).json({ message: "Notes Deleted" });
   });
