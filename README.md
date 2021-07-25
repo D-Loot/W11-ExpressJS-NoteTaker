@@ -1,4 +1,52 @@
-# 11 Express.js: Note Taker
+# 10 Object-Oriented Programming: Team Profile Generator
+
+# The Task
+
+The task was to create the back end to an existing front end of a program that records notes and to upload that back end to heroku. When the heroku site is loaded, the user is sent to a landing page with a link to the note tracking page. Once the note tracking page is loaded, the existing notes are loaded and a new note is ready to be taken. Once the title and body of the note are entered, a save button appears in the righthand corner of the screen. The User is able to delete the notes by selecting the red trash bin next to the note.
+
+## Acceptance Criteria
+
+```
+GIVEN a note-taking application
+    WHEN I open the Note Taker
+        THEN I am presented with a landing page with a link to a notes page
+
+    WHEN I click on the link to the notes page
+        THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
+
+    WHEN I enter a new note title and the note’s text
+        THEN a Save icon appears in the navigation at the top of the page
+
+    WHEN I click on the Save icon
+       THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
+
+    WHEN I click on an existing note in the list in the left-hand column
+       THEN that note appears in the right-hand column
+
+    WHEN I click on the Write icon in the navigation at the top of the page
+        THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+```
+
+Once the files were finalized, everything was uploaded to a Github Repository
+
+    * Repository contains:
+    *       quality README file with description,
+    *       screenshot, and
+    *       link to deployed application.
+    *       The URL of the functional, deployed application.
+    *       The URL of the GitHub repository, with a unique name.
+
+![WebSite](./Assets/OpeningPage.PNG)
+
+![CommandLine](./Assets/FirstNotesPage.PNG)
+
+![TestInfo](./Assets/SecondNotesPage.PNG)
+
+Heroku: https://whispering-ocean-33462.herokuapp.com/
+
+Github: https://github.com/D-Loot/W11-ExpressJS-NoteTaker
+
+# Background
 
 ## Your Task
 
@@ -70,7 +118,7 @@ You haven’t learned how to handle DELETE requests, but this application offers
 
 ## Grading Requirements
 
-This homework is graded based on the following criteria: 
+This homework is graded based on the following criteria:
 
 
 ### Technical Acceptance Criteria: 40%
