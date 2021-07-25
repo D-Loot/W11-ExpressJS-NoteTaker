@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -I --watch app",
+    "start": "node app/index.js",
     "server": "json-server --watch app/db/db.json"
   },
   "author": "Dan Looten",
